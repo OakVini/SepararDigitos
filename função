@@ -1,0 +1,37 @@
+            int unidade = 0;
+            int dezena = 0;
+            int centena = 0;
+            int unidadeDeMilhar = 0;
+            int restoDivisao = 0;
+            int quociente = 0;
+
+            const int DECIMAL = 10;
+
+            // Lê dado do usuário
+            Console.WriteLine("Digite um número inteiro com 4 dígitos");
+            Console.Write("\nNúmero: ");
+            int numeroCincoDigitos = Int32.Parse(Console.ReadLine());
+
+            //Esse % já pega o ultimo digito, você divide por 10 depois COMO INTEIRO para eliminar esse ultimo digito que ja foi salvo.
+
+            // Obtém digito das unidades
+            restoDivisao = numeroCincoDigitos % DECIMAL;
+            quociente = numeroCincoDigitos / DECIMAL;
+            unidade = restoDivisao;
+
+            // Obtém dígito das dezenas
+            restoDivisao = quociente % DECIMAL;
+            quociente = quociente / DECIMAL;
+            dezena = restoDivisao;
+
+            // Obtém dígito das centenas
+            restoDivisao = quociente % DECIMAL;
+            quociente = quociente / DECIMAL;
+            centena = restoDivisao;
+
+            // Obtém dígito das unidades de milhar
+            restoDivisao = quociente % DECIMAL;
+            quociente = quociente / DECIMAL;
+            unidadeDeMilhar = restoDivisao;
+
+            Console.WriteLine("Número Espaçado: {0}   {1}   {2}   {3}", unidadeDeMilhar, centena, dezena, unidade);
